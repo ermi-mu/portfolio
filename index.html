@@ -177,7 +177,7 @@
                     <div class="container">
                         <h2>Featured Projects</h2>
                         <div class="project-feature">
-                            <div class="project-card" id="project-card-2">
+                            <div class="project-card" id="project-card-1">
                                 <div class="project-image">
                                     <img src="Screenshot 2025-12-05 095846.png">
                                 </div>
@@ -204,7 +204,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="project-card" id="project-card-1">
+                            <div class="project-card" id="project-card-2">
                                 <div class="project-image">
                                     <img src="https://th.bing.com/th/id/OIP.-NsqgoAEEn6kbfc5oo1ldgHaEj?w=274&h=180&c=7&r=0&o=7&cb=12&pid=1.7&rm=3"
                                         alt="">
@@ -443,51 +443,51 @@
             window.location.href = `mailto:ermiasmulugeta38@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(email)}`;
         });
 
-        //    // Initialize carousel
-        //     let rightbtn = document.getElementsByClassName("btn--right")[0];
-        //     let leftbtn = document.getElementsByClassName("btn--left")[0];
-        //     const projectCards = document.querySelectorAll('.project-card');
-        //     const cardsPerView = 3; // Number of cards to display at once
+        // Initialize carousel
+        let rightbtn = document.getElementsByClassName("btn--right")[0];
+        let leftbtn = document.getElementsByClassName("btn--left")[0];
+        const projectCards = document.querySelectorAll('.project-card');
+        const cardsPerView = 3; // Number of cards to display at once
 
-        //     // Function to show the current set of project cards
-        //     function showCurrentCards() {
-        //         // Hide all project cards
-        //         projectCards.forEach(card => card.classList.remove('active'));
+        // Function to show the current set of project cards
+        function showCurrentCards() {
+            // Hide all project cards
+            projectCards.forEach(card => card.classList.remove('active'));
 
-        //         // Show the current set of project cards
-        //         for (let i = 0; i < cardsPerView; i++) {
-        //             const index = (i + currentIndex) % projectCards.length;
-        //             projectCards[index].classList.add('active');
-        //         }
-        //     }
+            // Show the current set of project cards
+            for (let i = 0; i < cardsPerView; i++) {
+                const index = (i + currentIndex) % projectCards.length;
+                projectCards[index].classList.add('active');
+            }
+        }
 
-        //     // Show the initial set of project cards
-        //     let currentIndex = 0;
-        //     showCurrentCards();
+        // Show the initial set of project cards
+        let currentIndex = 0;
+        showCurrentCards();
 
-        //     rightbtn.addEventListener("click", function() {
-        //         // Move the first card to the end of the list
-        //         const firstCard = projectCards[0];
-        //         firstCard.parentNode.appendChild(firstCard);
+        rightbtn.addEventListener("click", function () {
+            // Move the first card to the end of the list
+            const firstCard = projectCards[0];
+            firstCard.parentNode.appendChild(firstCard);
 
-        //         // Update currentIndex and wrap around if needed
-        //         currentIndex = (currentIndex + 1) % projectCards.length;
+            // Update currentIndex and wrap around if needed
+            currentIndex = (currentIndex + 1) % projectCards.length;
 
-        //         // Update the display with a slight delay for the transition effect
-        //         setTimeout(showCurrentCards, 50); // Delay to allow CSS transition to take effect
-        //     });
+            // Update the display with a slight delay for the transition effect
+            setTimeout(showCurrentCards, 50); // Delay to allow CSS transition to take effect
+        });
 
-        //     leftbtn.addEventListener("click", function() {
-        //         // Move the last card to the front of the list
-        //         const lastCard = projectCards[projectCards.length - 1];
-        //         lastCard.parentNode.insertBefore(lastCard, projectCards[0]);
+        leftbtn.addEventListener("click", function () {
+            // Move the last card to the front of the list
+            const lastCard = projectCards[projectCards.length - 1];
+            lastCard.parentNode.insertBefore(lastCard, projectCards[0]);
 
-        //         // Update currentIndex and wrap around if needed
-        //         currentIndex = (currentIndex - 1 + projectCards.length) % projectCards.length;
+            // Update currentIndex and wrap around if needed
+            currentIndex = (currentIndex - 1 + projectCards.length) % projectCards.length;
 
-        //         // Update the display with a slight delay for the transition effect
-        //         setTimeout(showCurrentCards, 50); // Delay to allow CSS transition to take effect
-        //     });
+            // Update the display with a slight delay for the transition effect
+            setTimeout(showCurrentCards, 50); // Delay to allow CSS transition to take effect
+        });
 
 
 
